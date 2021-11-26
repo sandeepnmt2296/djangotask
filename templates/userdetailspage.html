@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User details page</title>
+    <style>
+        
+        div.m {border-style: solid;width: 1000px;height: 490px; margin-left: 10%;margin-top: 3%;}
+        
+        
+        button.l {color: blue; margin-left: 1%;font-size: 15px;}
+        label { margin-left: 32%; font-size: xx-large;}
+        table { 
+                border-collapse: collapse;
+                width: 100%;}
+        
+        th { border: 2px solid #dddddd;
+                 text-align: center;
+                 }
+        td { border: 2px solid #dddddd;}
+        input {width: 98%; height: 98%; font-size:large;}
+        input.l{color: blue; margin-left: 35%;font-size: larger;}
+        button.ed{width: 98%; height: 98%; font-size:large;}
+        
+
+    </style>
+</head>
+<body>
+    <div class="m">
+        <form method="POST">
+            {% csrf_token %}
+        <button  class="l" type="submit" name="btn3">Logout</button>
+        <label>Update & Delete</label>
+        
+        
+        <div style = "margin-top: 2%; width: 98.8%; height: 420px; overflow:scroll; border: thin #000 solid; padding: 5px;">
+            <table>
+                <tr>
+                  <th colspan="1"></th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th >Password</th>
+                  <th>Address</th>
+                  <th colspan="2">Button</th>
+                </tr>
+                
+                 {% for i in detail %}   
+                <tr>
+                  <td><input type="text" value="{{i.id}}" name="n" hidden></td>
+                  <td><input type="text" value="{{i.name}}" name="n"></td>
+                  <td><input type="text" value="{{i.email}}" name="n"></td>
+                  <td><input type="text" value="{{i.password}}" name="n"></td>
+                  <td><input type="text" value="{{i.address}}" name="n"></td>
+                  <td><button class="ed" type="submit" value="{{i.id}}" name="btn1" style="background-color: rgb(88, 180, 88);">Edit</button></td>
+                  <td><button class="ed" type="submit" value="{{i.id}}" name="btn2" style="background-color: rgb(185, 70, 70);">Delete</button></td>
+                </tr>
+                {% endfor %}
+            </form>
+              </table>
+        </div>
+
+    </div>
+</body>
+</html>

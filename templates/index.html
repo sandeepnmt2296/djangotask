@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <style>
+        p.m { margin-left: 10%;}
+        div.d { border-style:solid;
+             height: 300px;
+             width: 300px;
+             margin-left: 40%;
+             margin-top: 10%;
+            }
+        input.i { 
+                margin-left: 10%;
+                margin-top: 5%;
+                width: 79%;
+                height: 9%;
+                font-size: 20px;
+                }
+        input.s {
+                font-size:large;
+                margin-left: 40%;
+                margin-top: 8%;
+                }
+        p.p { margin-left: 75%; margin-top: 16%;}
+        h2.h { text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="d">
+    <h2 class="h">Login Page</h2>
+    <p class="m">{{msg}}</p>
+    <form method="POST">
+        {% csrf_token %}
+    <input type="email" name="eml" placeholder=" Email" class="i">
+    <input type="password" name="pwd" placeholder=" Password" class="i">
+    <input type="submit" value="Login" name="" id="" class="s">
+     <p class="p"><a href="signup/">SignUp</a></p>
+    </form>
+    </div>
+</body>
+</html>

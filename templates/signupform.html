@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup form</title>
+    <style>
+        div {
+            border-style: solid;
+            height: 500px;
+            width: 450px;
+            margin-top: 3%;
+            margin-left: 33%;
+            }
+        p {margin-left: 10%;color: blue;}
+        
+        h1 {text-align: center;}
+        
+        input.t {
+                margin-left: 10%;
+                margin-top: 6%; 
+                width: 79%;
+                font-size: 17px;
+                }
+        input.b {
+                font-size: large;
+                margin-left: 42%;
+                margin-top: 8%;
+                
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Registration</h1>
+    <form method="POST">
+    {% csrf_token %}
+    <p>{{msg}}</p>
+    <input type="text" name="n" class="t" placeholder=" Username" >
+    <input type="email" name="email" class="t" placeholder=" Email">
+    <input type="password" name="pwd" class="t" placeholder="Password" >
+    <input type="password" name="cpwd" class="t" placeholder="Confirm Password" >
+    <input type="text" name="address" class="t" placeholder="Address">
+    <input type="submit" class="b">
+    </form>
+    </div>
+</body>
+</html>
